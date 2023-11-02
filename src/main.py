@@ -1,5 +1,14 @@
 from database.db_connection import execute_query, execute_modify
 
+def main_menu():
+    print('Choose one these options below\n')
+    print('1- Create a hero')
+    input = ('Choose an option below: ')
+    if input == '1':
+        create_hero()
+main_menu()
+
+
 
 # Create
 def create_hero():
@@ -11,7 +20,10 @@ def create_hero():
             VALUES (%s, %s, %s);
             """
     create = execute_modify(query, (name, about, bio))
-create_hero()
+
+
+
+
 
 # Read
 def select_all_heroes():
@@ -23,7 +35,7 @@ def select_all_heroes():
         print(item[1])
     return returned_items
 
-select_all_heroes()
+
 
 
 # # Update
@@ -35,7 +47,7 @@ def update_hero():
             WHERE name = new_name; 
             """
     new_name = execute_modify(query)
-update_hero()
+
 
 # # Delete
 # def delete_hero()
