@@ -5,7 +5,7 @@ from create_hero import select_all_heroes
 
 
 def back_to_main():
-    print('Press Enter to return to Main Menu or press Q to quit! ')
+    print('Enter = Main Menu      Q = Quit \n ')
     prompt = input('').capitalize()
     if prompt == (''):
         main_menu()
@@ -14,18 +14,18 @@ def back_to_main():
 
 #Create
 def create_hero():
-    print('Please enter a name for your hero:\n ')
+    print('What Shall We Call You, Traveler?\n ')
     name = input("")
-    print('Please enter an about-me: ')
+    print('And What Exactly Do You Do?\n ')
     about = input("")
-    print('Please enter a short bio: ')
+    print('Nice! How About A Short Bio So Other Travelers Know Who You Are?\n ')
     bio = input("")
     query = """
             INSERT INTO heroes (name, about_me, biography)
             VALUES (%s, %s, %s);
             """
     create = execute_modify(query, (name, about, bio))
-    print("Succesfully added Hero")
+    print("Succesfully Added Hero\n")
     back_to_main()
 
 #Read
@@ -39,9 +39,9 @@ def create_hero():
 # # Update
 def update_hero():
     select_all_heroes()
-    print('Which hero would you like to update?\n ')
+    print('Which Hero Would You Like To Update?\n ')
     option = input('')
-    print('What would you like to change the name to? See list above.\n ')
+    print('What Would You Like To Change The Name To?\n ')
     change_name = input('')
     query = """
             UPDATE heroes
@@ -49,32 +49,31 @@ def update_hero():
             WHERE id = %s; 
             """
     new_name = execute_modify(query, (change_name, option,))
-    print(f'Successfully changed hero name to {change_name}')
+    print(f'Successfully Changed Hero Name To {change_name}!\n')
     back_to_main()
 
 
 # # # Delete
 def delete_hero():
     select_all_heroes()
-    print('Which hero would you like to delete?\n ')
+    print('Which Hero Would You Like To Delete?\n ')
     prompt = input('')
     query = """
             DELETE FROM heroes 
             WHERE id = %s
             """
     delete_hero = execute_modify(query, (prompt,))
-    print('Successfully deleted hero!')
+    print('Successfully Deleted Hero!\n')
     back_to_main()
 
 def main_menu():
     os.system('clear')
     ascii_art()
-    print('Choose one these options below\n')
-    print('1- Create a hero')
-    print('2- View all heroes ')
-    print('3- Update a hero ')
-    print('4- Delete hero ')
-    print('Choose an option below: ')
+    print('Hello World Traveler! What Would You Like To Do?\n')
+    print('1- Create a hero.\n')
+    print('2- View all heroes.\n ')
+    print('3- Update a hero.\n ')
+    print('4- Delete hero.\n ')
     option = input("")
     if option == '1':
         os.system('clear')
