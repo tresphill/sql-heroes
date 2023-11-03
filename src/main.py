@@ -14,6 +14,7 @@ def back_to_main():
 
 #Create
 def create_hero():
+    ascii_art()
     print('What Shall We Call You, Traveler?\n ')
     name = input("")
     print('And What Exactly Do You Do?\n ')
@@ -38,6 +39,7 @@ def create_hero():
 
 # # Update
 def update_hero():
+    ascii_art()
     select_all_heroes()
     print('Which Hero Would You Like To Update?\n ')
     option = input('')
@@ -55,6 +57,7 @@ def update_hero():
 
 # # # Delete
 def delete_hero():
+    ascii_art()
     select_all_heroes()
     print('Which Hero Would You Like To Delete?\n ')
     prompt = input('')
