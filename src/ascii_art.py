@@ -1,6 +1,6 @@
 def ascii_art():
     print("""
-        wWWWw               wWWWw
+         wWWWw               wWWWw
    vVVVv (___) wWWWw         (___)  vVVVv
    (___)  ~Y~  (___)  vVVVv   ~Y~   (___)
     ~Y~   \|    ~Y~   (___)    |/    ~Y~
